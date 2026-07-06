@@ -1,0 +1,305 @@
+/* ─────────────────────────────────────────────
+   Exploration 1 — iOS Top Nav
+   Scoped styles; uses existing LD semantic tokens
+   where possible. Two local vars for the gradient
+   background and the blue-tinted pill shadow.
+───────────────────────────────────────────── */
+
+.root {
+  --_exp1-pill-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 4px 0 8px 0;
+  background: var(--ld-semantic-color-top-nav-fill, #0071DC);
+}
+
+/* White / L1 variant overrides */
+.root.rootWhite {
+  --_exp1-bg: linear-gradient(180deg, #fff 0%, #f1f6ff 100%);
+  --_exp1-pill-shadow: 0 3px 4px 0 #cedaf0;
+  background: var(--_exp1-bg);
+  border-bottom: 1px solid #e2e7f1;
+  padding: 4px 16px 8px 16px;
+}
+
+/* ── Blue / Home: search row ── */
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+/* ── Blue / Home: subnav row ── */
+.subNavRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 16px 0 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* allow drag-to-scroll */
+  user-select: none;
+  cursor: grab;
+}
+
+.subNavRow::-webkit-scrollbar {
+  display: none;
+}
+
+/* Search pill */
+.searchPill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 0;
+  padding: 6px 8px 6px 16px;
+  border-radius: 100px;
+  border: 1px solid #0053e2;
+  background: var(--ld-semantic-color-surface, #fff);
+  box-shadow: var(--_exp1-pill-shadow);
+  cursor: pointer;
+  /* reset button styles */
+  font-family: inherit;
+  text-align: left;
+}
+
+.searchPillText {
+  flex: 1 0 0;
+  font-family: var(--ld-semantic-font-family-sans, 'Everyday Sans UI', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pillIcons {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-shrink: 0;
+}
+
+.pillIconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  line-height: 0;
+}
+
+.pillIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Account icon button */
+.accountBtn {
+  width: 40px !important;
+  height: 40px !important;
+  flex-shrink: 0;
+}
+
+
+/* ── White / L1: title row ── */
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  gap: 8px;
+  padding-bottom: 8px;
+  overflow: hidden;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  line-height: 0;
+}
+
+.backIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.pageTitle {
+  flex: 1 0 0;
+  text-align: center;
+  font-family: var(--ld-semantic-font-family-sans, 'Everyday Sans UI', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchCircleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 48px;
+  border: 1px solid #c2d3e2;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  line-height: 0;
+  padding: 0;
+}
+
+.searchCircleIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Exploration 1: search modal blue header ── */
+.exp1SearchHeader {
+  display: flex;
+  flex-direction: column;
+  background: var(--ld-semantic-color-top-nav-fill, #0071DC);
+  padding: 4px 0 8px 0;
+  flex-shrink: 0;
+}
+
+.exp1SearchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.exp1BackBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.exp1BackIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.exp1SearchPillActive {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px 6px 16px;
+  border-radius: 100px;
+  border: 1px solid #0053E2;
+  background: var(--ld-semantic-color-surface, #fff);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  gap: 8px;
+  min-height: 38px;
+}
+
+.exp1SearchInput {
+  flex: 1;
+  outline: none;
+  font-family: var(--ld-semantic-font-family-sans, 'Everyday Sans UI', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.exp1SearchInput::placeholder {
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+}
+
+.exp1PillIconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  line-height: 0;
+}
+
+.exp1PillIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Exploration 1: glass/gradient search modal header ── */
+.exp1SearchHeaderGlass {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff 0%, #e1edff 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(194, 211, 226, 0.6);
+  padding: 4px 0 8px 0;
+  flex-shrink: 0;
+}
+
+.exp1BackBtnDark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+/* ── Exploration 1: white/typing state header ── */
+.exp1SearchHeaderTyping {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff 0%, #e1edff 100%);
+  border-bottom: 1px solid rgba(194, 211, 226, 0.6);
+  padding: 4px 0 8px 0;
+  flex-shrink: 0;
+}
+
+.exp1CancelBtn {
+  background: none;
+  border: none;
+  padding: 0 4px;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  font-family: var(--ld-semantic-font-family-sans, 'Everyday Sans UI', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

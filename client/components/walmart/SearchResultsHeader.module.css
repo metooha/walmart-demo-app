@@ -1,0 +1,80 @@
+/* Exploration 1: wrapper with subtle blue gradient background */
+.exp1Wrapper {
+  background: linear-gradient(180deg, #fff 0%, #e1edff 100%);
+  border-bottom: 1px solid rgba(194, 211, 226, 0.6);
+}
+
+.exp1WrapperTransparent {
+  background: transparent;
+  border-bottom: none;
+}
+
+/* Exploration 1 variant — matches MobileTopNavExploration1 search pill exactly */
+.exp1Header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 16px 8px 0px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.exp1BackBtn {
+  flex-shrink: 0;
+  color: var(--ld-semantic-color-text);
+}
+
+/* Pill: white bg, blue border, shadow — identical to MobileTopNavExploration1 .searchPill */
+.exp1SearchPill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 0;
+  padding: 6px 12px 6px 16px;
+  border-radius: 100px;
+  border: 1px solid #0053e2;
+  background: var(--ld-semantic-color-surface, #fff);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  gap: 8px;
+  min-height: 38px;
+}
+
+/* Query text: dark (not gray placeholder) since this is an active query */
+.exp1QueryText {
+  flex: 1 0 0;
+  font-family: var(--ld-semantic-font-family-sans, 'Everyday Sans UI', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Icons row — gap 12px matches MobileTopNavExploration1 .pillIcons */
+.exp1Icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Icon button reset — same as .pillIconBtn */
+.exp1IconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  line-height: 0;
+}
+
+/* 16×16 icons — same as .pillIcon */
+.exp1Icon {
+  width: 16px;
+  height: 16px;
+}

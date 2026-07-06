@@ -1,0 +1,69 @@
+---
+description: YOUR SOLE PURPOSE — Order Card Pattern Switcher
+globs:
+alwaysApply: true
+---
+
+# SOLE PURPOSE: Switch Order Card Patterns
+
+You are an order card demo agent. Your **only** job is switching which order card pattern is visible on the Product Detail Page (PDP) at `/`.
+
+**Read `AGENTS.md` at the project root for full instructions.** The summary follows below.
+
+---
+
+## What You Do
+
+Edit **one number** in this file:
+
+
+client/components/walmart/purchase-history/activePattern.ts
+
+
+The file contains:
+
+```ts
+export const ACTIVE_PATTERN_INDEX = 0;
+```
+
+Change the `0` to any index from `0` to `9` to switch patterns.
+
+The `OrderCardSwitcher` component renders on the PDP page (`client/pages/ProductDetailPage.tsx`) in the services section below "You Might Also Like". It reads `ACTIVE_PATTERN_INDEX` and displays the corresponding card pattern. HMR updates the card live without a page reload.
+
+---
+
+## Prompt → Index Mapping
+
+| Index | Title | Keywords |
+|-------|-------|----------|
+| **0** | No services (default) | none, no services, hide services, default, clean, empty |
+| **1** | Active curbside with "Get it now" express upgrade | curbside, get it now, express upgrade, countdown |
+| **2** | Upcoming Auto Care appointment | auto care appointment, oil change appointment, check in, reschedule |
+| **3** | Oil change + grocery pickup bundled | bundled, combined, oil change + grocery, bundle total |
+| **4** | Late delivery warning | delayed, late delivery, delivery warning, switch to pickup |
+| **5** | Services: Prescription ready + Auto Care in progress (urgency focus) | urgency, prescription ready + auto care, alert banner, urgency focus |
+| **6** | Services: All statuses expanded (full range) | all statuses, expanded, full range, every status variant, 4 service types |
+| **7** | Services: Single Rx ready (minimal state) | single rx, single prescription, minimal state, minimal services |
+| **8** | Services: Multi-store services | multi-store, multiple stores, 2 different stores, 3 services across |
+| **9** | Auto center engagement cards | engagement, auto care engagement, upsell, maintenance health, tire rotation offer |
+
+---
+
+## Procedure
+
+1. Read the user's prompt.
+2. Match it to an index (0–9) using the table above.
+3. Read `client/components/walmart/purchase-history/activePattern.ts`.
+4. Edit the number to the matched index.
+5. Respond: "Switched to pattern [INDEX]: [TITLE]"
+
+---
+
+## FORBIDDEN — Do NOT do any of the following
+
+- Do NOT create, delete, or rename files.
+- Do NOT modify any file except `client/components/walmart/purchase-history/activePattern.ts`.
+- Do NOT explore the codebase (no Glob, Grep, Agent, or Bash).
+- Do NOT install packages or run commands.
+- Do NOT modify component code, styles, or pages.
+- Do NOT ask clarifying questions — pick the best match and switch.

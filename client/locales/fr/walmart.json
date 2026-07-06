@@ -1,0 +1,72 @@
+{
+  "pdp": {
+    "home": "[FR] Home",
+    "headphones": "[FR] Headphones",
+    "noiseCancelling": "[FR] Noise-Cancelling",
+    "off": "[FR] OFF",
+    "reviews": "[FR] reviews",
+    "youSave": "[FR] You save",
+    "only": "[FR] Only",
+    "leftInStock": "[FR] left in stock",
+    "color": "[FR] Color",
+    "qty": "[FR] Qty",
+    "added": "[FR] Added!",
+    "addToCart": "[FR] Add to Cart",
+    "buyNow": "[FR] Buy Now",
+    "free2DayDelivery": "[FR] Free 2-Day Delivery",
+    "arrivesBy": "[FR] Arrives by",
+    "withSonancePrime": "[FR] with Sonance Prime",
+    "freeStorePickup": "[FR] Free Store Pickup",
+    "readyIn2Hours": "[FR] Ready in 2 hours at Midtown store",
+    "free30DayReturns": "[FR] Free 30-Day Returns",
+    "noQuestionsAsked": "[FR] No questions asked. Easy drop-off or pickup.",
+    "warranty": "[FR] 2-Year Warranty",
+    "refurbished": "[FR] Certified Refurbished Available",
+    "priceMatch": "[FR] Price-Match Guarantee",
+    "overview": "[FR] Overview",
+    "specifications": "[FR] Specifications",
+    "outOf5": "[FR] out of 5",
+    "stars": "[FR] stars",
+    "verifiedPurchase": "[FR] Verified Purchase",
+    "helpful": "[FR] Helpful?",
+    "yes": "[FR] Yes",
+    "no": "[FR] No",
+    "youMightAlsoLike": "[FR] You Might Also Like"
+  },
+  "product": {
+    "brand": "Sonance",
+    "name": "Arc Pro X1 Wireless Noise-Cancelling Headphones",
+    "colors": {
+      "matteBlack": "Matte Black",
+      "pearlWhite": "Pearl White",
+      "midnightBlue": "Midnight Blue",
+      "roseGold": "Rose Gold"
+    },
+    "features": {
+      "ancTitle": "Active Noise Cancellation",
+      "ancDesc": "Industry-leading 3-mic ANC eliminates up to 99% of ambient sound.",
+      "batteryTitle": "40-Hour Battery Life",
+      "batteryDesc": "Full-day listening on a single charge with 10-min quick charge.",
+      "bluetoothTitle": "Bluetooth 5.3",
+      "bluetoothDesc": "Multi-point connection to 2 devices simultaneously.",
+      "soundTitle": "Hi-Res Audio",
+      "soundDesc": "40mm dynamic drivers with LDAC codec support up to 96kHz."
+    },
+    "specs": {
+      "driverSize": "Driver Size",
+      "freqResponse": "Frequency Response",
+      "impedance": "Impedance",
+      "maxSpl": "Max SPL",
+      "btVersion": "Bluetooth Version",
+      "codecSupport": "Codec Support",
+      "ancReduction": "ANC Reduction",
+      "batteryAncOn": "Battery Life (ANC On)",
+      "batteryAncOff": "Battery Life (ANC Off)",
+      "quickCharge": "Quick Charge",
+      "chargingPort": "Charging Port",
+      "weight": "Weight",
+      "foldable": "Foldable",
+      "mics": "Microphones"
+    }
+  }
+}

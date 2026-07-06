@@ -1,0 +1,27 @@
+1. No Custom UI for Existing Components
+Before writing any custom HTML for navigation, buttons, tabs, quantity controls, or cards — check if a design system component already exists. If it does, use it. Never reimplement what's already built.
+
+2. No Inline SVGs — Always Use Icon Components
+Every icon must come from @/components/icons/. Never write <svg> markup inline. If the icon doesn't exist, add it to the icon library. Applies to buttons, badges, and decorative elements alike.
+
+3. Product Images Must Come From Project Assets
+Never use external image URLs (Pexels, Lorem Picsum, etc.) for product images. Use Builder CDN assets, /images/products/ local files, or the PRODUCT_IMAGES helper — whichever already exists in the project.
+
+4. Add-to-Cart Must Be Responsive by Default
+WCPAddToCart rendered inside tiles must be size="medium" with label on desktop (>768px) and size="xsmall" icon-only on mobile. This is the default behavior, not an opt-in.
+
+5. Read Component Source Before Using It
+Before using any component, read its .tsx file to understand available props (variants, sizes, callbacks). Never guess the API — the source is the source of truth.1. No Custom UI for Existing Components
+Before writing any custom HTML for navigation, buttons, tabs, quantity controls, or cards — check if a design system component already exists. If it does, use it. Never reimplement what's already built.
+
+2. No Inline SVGs — Always Use Icon Components
+Every icon must come from @/components/icons/. Never write <svg> markup inline. If the icon doesn't exist, add it to the icon library. Applies to buttons, badges, and decorative elements alike.
+
+3. Product Images Must Come From Project Assets
+Never use external image URLs (Pexels, Lorem Picsum, etc.) for product images. Use Builder CDN assets, /images/products/ local files, or the PRODUCT_IMAGES helper — whichever already exists in the project.
+
+4. Add-to-Cart Must Be Responsive by Default
+WCPAddToCart rendered inside tiles must be size="medium" with label on desktop (>768px) and size="xsmall" icon-only on mobile. This is the default behavior, not an opt-in.
+
+5. Read Component Source Before Using It
+Before using any component, read its .tsx file to understand available props (variants, sizes, callbacks). Never guess the API — the source is the source of truth.
