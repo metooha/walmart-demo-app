@@ -224,7 +224,7 @@ const App = () => (
       <SnackbarContainer />
       <WCPRichSnackbarContainer />
       <MartyProvider>
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             <React.Suspense fallback={LazyFallback}>
             {import.meta.env.DEV && <RouteWatcher />}
             <KeyboardShortcuts />
