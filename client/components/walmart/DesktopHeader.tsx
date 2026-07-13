@@ -19,8 +19,8 @@ import styles from './DesktopHeader.module.css';
 export function DesktopHeader() {
   const navigate = useNavigate();
   const location = useLocation();
-  // Sparky's search icon is hidden by default on the /walmart page.
-  const showSparkyInSearch = location.pathname !== '/walmart';
+  // Sparky lives in the search bar on every page except the Walmart homepage.
+  const isWalmartHome = location.pathname === '/walmart' || location.pathname === '/walmart/';
   const { cartCount, cartPrice } = useCart();
   const { showLocationCallout, setShowLocationCallout } = useLayoutSettings();
   const [showGIC, setShowGIC] = useState(false);
@@ -176,7 +176,7 @@ export function DesktopHeader() {
             }}
           >
             <div className={`${styles.searchInputWrap} ${showTypeahead ? styles.searchInputWrapActive : ''}`}>
-              {showSparkyInSearch && <div className={styles.sparkyWrap}><SparkyLookingDown /></div>}
+              {!isWalmartHome && <div className={styles.sparkyWrap}><SparkyLookingDown /></div>}
               <input
                 aria-label="Search"
                 name="q"
