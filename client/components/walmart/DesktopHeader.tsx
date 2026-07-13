@@ -5,7 +5,7 @@ import {
   SparkyLookingDown, CartIcon,
   FulfillmentShippingIcon, CloseIcon as X,
 } from '@/components/icons-custom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { DesktopGICDropdown } from './DesktopGICDropdown';
 import { DesktopSearchTypeahead } from './DesktopSearchTypeahead';
@@ -18,6 +18,9 @@ import styles from './DesktopHeader.module.css';
 
 export function DesktopHeader() {
   const navigate = useNavigate();
+  const location = useLocation();
+  // Sparky's search icon is hidden by default on the /walmart page.
+  const showSparkyInSearch = location.pathname !== '/walmart';
   const { cartCount, cartPrice } = useCart();
   const { showLocationCallout, setShowLocationCallout } = useLayoutSettings();
   const [showGIC, setShowGIC] = useState(false);
@@ -173,7 +176,7 @@ export function DesktopHeader() {
             }}
           >
             <div className={`${styles.searchInputWrap} ${showTypeahead ? styles.searchInputWrapActive : ''}`}>
-              <div className={styles.sparkyWrap}><SparkyLookingDown /></div>
+              {showSparkyInSearch && <div className={styles.sparkyWrap}><SparkyLookingDown /></div>}
               <input
                 aria-label="Search"
                 name="q"

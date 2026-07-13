@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { useLayoutSettings } from "@/contexts/LayoutSettingsContext";
 import { NewArrivalsCarousel } from "@/components/walmart/NewArrivalsCarousel";
@@ -10,6 +10,8 @@ import { PromotionalItemTile } from "@/components/walmart/PromotionalItemTile";
 import { ContinueShopping } from "@/components/walmart/ContinueShopping";
 import { FlashDealsCarousel } from "@/components/walmart/FlashDealsCarousel";
 import { PRODUCT_IMAGES } from "@/components/walmart/productImages";
+import { SparkyChatFab } from "@/components/walmart/chat/SparkyChatFab";
+import { AskSparkySheet } from "@/components/walmart/chat/AskSparkySheet";
 
 interface CarouselItem {
   img: string;
@@ -51,6 +53,7 @@ export default function Index() {
   const { navDesign } = useLayoutSettings();
   const isExp1 = navDesign === 'exploration1';
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [isSparkyOpen, setIsSparkyOpen] = useState(false);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
@@ -297,6 +300,10 @@ export default function Index() {
         <ContinueShopping />
 
       </div>
+
+      {/* ── Ask Sparky chat FAB + sheet ───────────────────────── */}
+      <SparkyChatFab onClick={() => setIsSparkyOpen(true)} />
+      <AskSparkySheet isOpen={isSparkyOpen} onClose={() => setIsSparkyOpen(false)} />
 
     </ResponsiveLayout>
   );

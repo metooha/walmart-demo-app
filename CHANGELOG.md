@@ -44,6 +44,5 @@ Format: [version] - date
 - Agent integration instructions (existing project, version upgrade, Figma-to-Code)
 
 ### Tooling
-- .figmaignore for Figma Make compatibility
 - Component Library layout with sidebar navigation
 - Guidelines doc index

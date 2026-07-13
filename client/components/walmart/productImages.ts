@@ -44,6 +44,8 @@ export const PRODUCT_IMAGES = {
     'https://cdn.builder.io/api/v1/image/assets%2F02297b1ff48d4a2f8e4d9ed415c47ecf%2Fdff23a61c3bb45d1bcaed4c8bd36bfbe?format=webp&width=400',
   mugSet:
     'https://cdn.builder.io/api/v1/image/assets%2F02297b1ff48d4a2f8e4d9ed415c47ecf%2F05a837e12c93403fa0ef20a3f1a1bffe?format=webp&width=400',
+  keurigCoffeeMaker:
+    'https://i5.walmartimages.com/seo/Keurig-K-Express-Coffee-Maker-Single-Serve-K-Cup-Pod-Coffee-Brewer-Mint_96a1dd17-2da1-4b51-bcf7-37a629807553.e117afba2f641809896f6f9663b1487c.jpeg',
 
   // Furniture
   boucleArmchair:

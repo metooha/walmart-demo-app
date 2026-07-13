@@ -1,0 +1,79 @@
+/* ============================================================
+   Sparky Chat FAB (desktop)
+   Exact BottomNav .sparkyButton treatment, scaled to 64px.
+   Hidden on mobile — BottomNav owns Sparky there.
+   ============================================================ */
+
+.fab {
+  position: fixed;
+  right: var(--ld-primitive-scale-space-300, 24px);
+  bottom: var(--ld-primitive-scale-space-300, 24px);
+  z-index: var(--ld-semantic-z-index-modal, 1050);
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  /* Light sky-blue liquid glass tint */
+  background: linear-gradient(
+    135deg,
+    rgba(215, 236, 255, 0.65) 0%,
+    rgba(179, 216, 255, 0.45) 100%
+  );
+  cursor: pointer;
+  padding: 0;
+  box-shadow:
+    -4.5px -4.5px 1.5px -5.25px rgba(255, 255, 255, 0.6) inset,
+    4.5px 4.5px 1.5px -5.25px rgba(255, 255, 255, 0.85) inset,
+    3px 4.5px 1.5px -3px rgba(120, 170, 220, 0.25) inset,
+    -3px -4.5px 1.5px -3px rgba(120, 170, 220, 0.55) inset,
+    0 0 33px 0 rgba(215, 236, 255, 0.5) inset,
+    0 4px 14px 0 rgba(0, 60, 120, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fab:hover {
+  transform: translateY(-1px);
+}
+
+.fab:active {
+  transform: translateY(0);
+}
+
+.fab:focus-visible {
+  outline: var(--ld-semantic-scale-borderwidth-interactive-focused, 2px) solid
+    var(--ld-semantic-color-action-focus-outline);
+  outline-offset: 2px;
+}
+
+/* BottomNav uses 32px icon in a 48px button (2/3). At 64px → ~43px. */
+.sparkyIcon {
+  width: 43px;
+  height: 43px;
+}
+
+/* Mobile: BottomNav Sparky button is the entry point — hide this FAB */
+@media (max-width: 767px) {
+  .fab {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab {
+    transition: none;
+  }
+
+  .fab:hover,
+  .fab:active {
+    transform: none;
+  }
+}

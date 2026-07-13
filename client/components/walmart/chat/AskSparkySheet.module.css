@@ -1,0 +1,297 @@
+/* ============================================================
+   [WCP] Ask Sparky — Chat Bottom Sheet
+   ============================================================ */
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--ld-semantic-z-index-modal, 1050);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-top-left-radius: var(--ld-primitive-scale-borderradius-200, 16px);
+  border-top-right-radius: var(--ld-primitive-scale-borderradius-200, 16px);
+  box-shadow: var(--ld-semantic-elevation-300, 0 -2px 8px rgba(0, 0, 0, 0.1));
+  height: 640px;
+  max-height: 88vh;
+  overflow: hidden;
+  min-height: 0;
+  animation: slideUp 300ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (min-width: 768px) {
+  .content {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    width: 400px;
+    height: 680px;
+    max-height: 80vh;
+    border-radius: var(--ld-primitive-scale-borderradius-200, 16px);
+  }
+}
+
+.handle {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+  flex-shrink: 0;
+}
+
+.handleBar {
+  width: 36px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--ld-primitive-color-gray-30, #d9dadc);
+}
+
+@media (min-width: 768px) {
+  .handle {
+    display: none;
+  }
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: var(--ld-primitive-scale-space-150, 12px);
+  padding: 8px var(--ld-primitive-scale-space-200, 16px) var(--ld-primitive-scale-space-200, 16px);
+  background: var(--ld-primitive-color-blue-160, #001e60);
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.avatar {
+  position: relative;
+  /* Hang ~1/3 below the navy header into the white body (see screenshot) */
+  top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: transparent;
+  flex-shrink: 0;
+  z-index: 2;
+  overflow: visible;
+}
+
+.avatarFace {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.title {
+  flex: 1 0 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-family: var(--ld-semantic-font-heading-small-family, 'Everyday Sans UI', -apple-system, Roboto, sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--ld-primitive-scale-space-50, 4px);
+}
+
+.headerIconBtn {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.headerIconBtn svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Disclaimer */
+.disclaimer {
+  padding: var(--ld-primitive-scale-space-200, 16px) var(--ld-primitive-scale-space-200, 16px) 0;
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+  font-size: 13px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Messages — scrolls in place; footer stays pinned */
+.messages {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--ld-primitive-scale-space-200, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ld-primitive-scale-space-200, 16px);
+}
+
+.messageRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageRow--user {
+  align-items: flex-end;
+}
+
+.messageRow--assistant {
+  align-items: flex-start;
+}
+
+.bubble {
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.bubble--user {
+  background: var(--ld-semantic-color-action-fill-primary, #0053e2);
+  color: #ffffff;
+  border-radius: var(--ld-primitive-scale-borderradius-100, 8px);
+  padding: 10px 16px;
+}
+
+.bubble--assistant {
+  color: var(--ld-semantic-color-text, #2e2f32);
+}
+
+.timestamp {
+  margin-top: 4px;
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+  font-size: 12px;
+}
+
+.feedbackRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ld-primitive-scale-space-100, 8px);
+  margin-top: 8px;
+  color: var(--ld-semantic-color-text-subtle, #515357);
+  font-size: 13px;
+}
+
+.feedbackButtons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.feedbackBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 9999px;
+  color: var(--ld-semantic-color-text-subtle, #515357);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.feedbackBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.feedbackBtn:hover {
+  background: var(--ld-primitive-color-gray-10, #f1f1f2);
+}
+
+.feedbackBtn--active {
+  color: var(--ld-semantic-color-action-fill-primary, #0053e2);
+}
+
+.typingRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ld-primitive-scale-space-100, 8px);
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+  font-size: 14px;
+}
+
+.typingDot {
+  animation: bounce 1.4s ease-in-out infinite;
+}
+
+/* Footer — always pinned to the bottom of the sheet */
+.footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: var(--ld-primitive-scale-space-150, 12px) var(--ld-primitive-scale-space-200, 16px) var(--ld-primitive-scale-space-200, 16px);
+  border-top: 1px solid var(--ld-semantic-color-separator, #e3e4e5);
+  background: #ffffff;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--ld-primitive-color-gray-70, #909196);
+  border-radius: 9999px;
+  padding: 8px 8px 8px 16px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.inputWrap:focus-within {
+  border-color: var(--ld-semantic-color-action-fill-primary, #0053e2);
+  box-shadow: 0 0 0 1px var(--ld-semantic-color-action-fill-primary, #0053e2);
+}
+
+.input {
+  flex: 1 0 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--ld-semantic-color-text, #2e2f32);
+  min-width: 0;
+}
+
+.input::placeholder {
+  color: var(--ld-semantic-color-text-subtlest, #74767c);
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.sendBtn svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}

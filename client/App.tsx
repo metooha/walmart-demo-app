@@ -357,8 +357,9 @@ const App = () => (
               {/* Shoes Product Detail Page */}
               <Route path="/walmart/shoes" element={<ShoesProductDetailPage />} />
 
-              {/* Redirect root to /walmart */}
+              {/* Redirect root to Walmart home */}
               <Route path="/" element={<Navigate to="/walmart" replace />} />
+              <Route path="/pdp" element={<ProductDetailPage />} />
 
               {/* Catch-all */}
               <Route path="*" element={<NotFound />} />

@@ -18,6 +18,7 @@ export { CartIcon } from './CartIcon';
 // Sparky mascot (Lottie animations)
 export { SparkyLookingDown } from './SparkyLookingDown';
 export { SparkyAnimation } from './SparkyAnimation';
+export { SparkyFace } from './SparkyFace';
 
 // Branded logos (multi-color, not themeable)
 export { WalmartCashLogoIcon } from './WalmartCashLogoIcon';

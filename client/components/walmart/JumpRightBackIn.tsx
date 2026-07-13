@@ -151,7 +151,7 @@ const CATEGORIES: Category[] = [
         badge: { label: 'Best seller', type: 'bestseller' },
       },
       {
-        image: PRODUCT_IMAGES.cookwareSet,
+        image: PRODUCT_IMAGES.keurigCoffeeMaker,
         name: 'Keurig K-Express Coffee...',
         price: '59',
         cents: '00',
