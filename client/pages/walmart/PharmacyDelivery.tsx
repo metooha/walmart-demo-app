@@ -17,6 +17,7 @@ import {
   User,
   UserCircle,
 } from '@/components/icons';
+import { withBase } from '@/lib/utils';
 import { ResponsiveLayout } from '@/components/walmart/ResponsiveLayout';
 import { Button } from '@/components/ui/Button';
 import { Divider } from '@/components/ui/Divider';
@@ -164,7 +165,7 @@ export default function PharmacyDelivery() {
             </p>
           </div>
           <img
-            src="/illustrations/spot-illustration/Pharmacy.svg"
+            src={withBase('/illustrations/spot-illustration/Pharmacy.svg')}
             alt="Pharmacy"
             className={styles.heroIllustration}
           />
@@ -173,7 +174,7 @@ export default function PharmacyDelivery() {
         {/* 2 · Delivery announcement */}
         <div className={styles.deliveryBanner}>
           <img
-            src="/illustrations/spot-illustration/PharmacyDelivery.svg"
+            src={withBase('/illustrations/spot-illustration/PharmacyDelivery.svg')}
             alt=""
             aria-hidden="true"
             className={styles.bannerIcon}
@@ -209,7 +210,7 @@ export default function PharmacyDelivery() {
               <Button variant="primary" size="medium">Schedule now</Button>
             </div>
             <img
-              src="/illustrations/spot-illustration/CalendarWithClock.svg"
+              src={withBase('/illustrations/spot-illustration/CalendarWithClock.svg')}
               alt=""
               aria-hidden="true"
               className={styles.vaccineIllustration}
@@ -266,7 +267,7 @@ export default function PharmacyDelivery() {
                 </ul>
               </div>
               <img
-                src="/illustrations/spot-illustration/FreeDelivery.svg"
+                src={withBase('/illustrations/spot-illustration/FreeDelivery.svg')}
                 alt="Free delivery"
                 className={styles.deliveryIllustration}
               />
@@ -347,7 +348,7 @@ export default function PharmacyDelivery() {
               </div>
             </div>
             <img
-              src="/illustrations/spot-illustration/WalmartBenefits.svg"
+              src={withBase('/illustrations/spot-illustration/WalmartBenefits.svg')}
               alt="Medicare benefits"
               className={styles.medicareIllustration}
             />

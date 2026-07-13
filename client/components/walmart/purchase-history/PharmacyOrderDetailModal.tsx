@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import {
   ChevronRight, Store, CreditCard, Printer, Phone, Clock, CardUser,
 } from '@/components/icons';
+import { withBase } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { Tag } from '@/components/ui/Tag';
@@ -98,7 +99,7 @@ export function PharmacyOrderDetailModal({
                     {/* Status card */}
                     <section className={styles.card}>
                       <div className={styles.fulfillmentRow}>
-                        <img src="/illustrations/spot-illustration/Pharmacy.svg" alt="" aria-hidden="true" width={36} height={36} />
+                        <img src={withBase('/illustrations/spot-illustration/Pharmacy.svg')} alt="" aria-hidden="true" width={36} height={36} />
                         <div className={styles.fulfillmentText}>
                           <span className={styles.fulfillmentLabel}>Walmart Pharmacy</span>
                           <span className={styles.fulfillmentSub}>{storeName}</span>

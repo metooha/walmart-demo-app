@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import {
   Check, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp,
 } from '@/components/icons';
+import { withBase } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { IconButton } from '@/components/ui/IconButton';
 import { Chip } from '@/components/ui/Chip';
@@ -145,7 +146,7 @@ function PickupModal({
             </div>
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
-                <img src="/illustrations/spot-illustration/Glasses.svg" alt="" aria-hidden="true" width={56} height={56} />
+                <img src={withBase('/illustrations/spot-illustration/Glasses.svg')} alt="" aria-hidden="true" width={56} height={56} />
                 <div className={styles.detailInfo}>
                   <p className={styles.detailHeading}>Optical order</p>
                   {orderRef && <p className={styles.detailSub}>{orderRef}</p>}
@@ -260,7 +261,7 @@ function RescheduleModal({
         <div className={styles.detailsScrollBody}>
           {/* Order info */}
           <div className={styles.apptServiceRow}>
-            <img src="/illustrations/spot-illustration/Glasses.svg" alt="" aria-hidden="true" width={48} height={48} className={styles.apptServiceIcon} />
+            <img src={withBase('/illustrations/spot-illustration/Glasses.svg')} alt="" aria-hidden="true" width={48} height={48} className={styles.apptServiceIcon} />
             <div className={styles.apptServiceInfo}>
               <p className={styles.apptServiceName}>Optical order</p>
               {orderRef && <p className={styles.apptServiceDesc}>{orderRef}</p>}

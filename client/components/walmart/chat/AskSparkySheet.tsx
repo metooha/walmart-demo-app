@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
 import styles from './AskSparkySheet.module.css';
+import { withBase } from '@/lib/utils';
 import { IconButton } from '@/components/ui/IconButton';
 import { X } from '@/components/icons/X';
 import { ChevronUp } from '@/components/icons/ChevronUp';
@@ -140,7 +141,7 @@ export function AskSparkySheet({ isOpen, onClose, userName = 'Emilia' }: AskSpar
           {/* Header */}
           <div className={styles.header}>
             <div className={styles.avatar} aria-hidden="true">
-              <img src="/assets/sparky-listening.svg" alt="" className={styles.avatarFace} />
+              <img src={withBase('/assets/sparky-listening.svg')} alt="" className={styles.avatarFace} />
             </div>
             <DrawerPrimitive.Title className={styles.title}>Ask Sparky</DrawerPrimitive.Title>
             <div className={styles.headerActions}>

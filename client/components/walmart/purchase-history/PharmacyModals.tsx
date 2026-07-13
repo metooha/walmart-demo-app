@@ -7,6 +7,7 @@ import { TextField } from '@/components/ui/TextField';
 import { Scrim } from '@/components/ui/Scrim';
 import { PharmacyOrderDetailModal } from './PharmacyOrderDetailModal';
 import styles from './AutoCareModals.module.css';
+import { withBase } from '@/lib/utils';
 
 export type PharmacyModalType = 'pickup' | 'transferRx' | 'viewDetails' | null;
 
@@ -70,7 +71,7 @@ function PickupModal({
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
                 <img
-                  src="/illustrations/spot-illustration/Pharmacy.svg"
+                  src={withBase('/illustrations/spot-illustration/Pharmacy.svg')}
                   alt="" aria-hidden="true" width={56} height={56}
                 />
                 <div className={styles.detailInfo}>
@@ -181,7 +182,7 @@ function TransferRxModal({
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
                 <img
-                  src="/illustrations/spot-illustration/Pharmacy.svg"
+                  src={withBase('/illustrations/spot-illustration/Pharmacy.svg')}
                   alt="" aria-hidden="true" width={56} height={56}
                 />
                 <div className={styles.detailInfo}>

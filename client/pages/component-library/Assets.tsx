@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ComponentPageLayout } from '@/components/ui/ComponentPageLayout';
 import { Tabs, TabList, Tab, TabPanel } from '@/components/ui/Tab';
 import { Search, Star } from '@/components/icons';
+import { withBase } from '@/lib/utils';
 import styles from './Assets.module.css';
 
 // ─── Asset data ─────────────────────────────────────────────────────────────
@@ -115,7 +116,7 @@ function IllustrationsTab() {
           {filtered.map(name => (
             <AssetCard
               key={name}
-              src={`/illustrations/spot-illustration/${name}.svg`}
+              src={withBase(`/illustrations/spot-illustration/${name}.svg`)}
               label={name}
               copyText={`/illustrations/spot-illustration/${name}.svg`}
             />
@@ -142,7 +143,7 @@ function ProductImagesTab() {
           {filtered.map(name => (
             <ProductCard
               key={name}
-              src={`/images/products/${name}.jpeg`}
+              src={withBase(`/images/products/${name}.jpeg`)}
               label={name}
               copyText={`/images/products/${name}.jpeg`}
             />
@@ -166,7 +167,7 @@ function ProductImagesTab() {
         {LOGOS.map(logo => (
           <AssetCard
             key={logo.name}
-            src={logo.path}
+            src={withBase(logo.path)}
             label={logo.name}
             copyText={logo.path}
           />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentPageLayout } from '@/components/ui/ComponentPageLayout';
 import { WCPHeartView } from '@/components/walmart/WCPHeartView';
+import { withBase } from '@/lib/utils';
 import styles from './WCPHeartView.module.css';
 
 function StateLabel({ children }: { children: React.ReactNode }) {
@@ -146,7 +147,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/dont-1-heart-color.webp"
+                  src={withBase('/assets/examples/heart-view/dont-1-heart-color.webp')}
                   alt="Don't change the heart fill color"
                   className={styles.dosDontImg}
                 />
@@ -168,7 +169,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/dont-2-cta-tooltip.webp"
+                  src={withBase('/assets/examples/heart-view/dont-2-cta-tooltip.webp')}
                   alt="Don't include inaccessible CTAs in the callout"
                   className={styles.dosDontImg}
                 />
@@ -190,7 +191,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/do-1-product-tiles.webp"
+                  src={withBase('/assets/examples/heart-view/do-1-product-tiles.webp')}
                   alt="Do overlay heart on product tile top right"
                   className={styles.dosDontImg}
                 />
@@ -211,7 +212,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/do-2-pdp-floating.webp"
+                  src={withBase('/assets/examples/heart-view/do-2-pdp-floating.webp')}
                   alt="Do match size with other PDP floating buttons"
                   className={styles.dosDontImg}
                 />
@@ -232,7 +233,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/do-3-callout-no-overlap.webp"
+                  src={withBase('/assets/examples/heart-view/do-3-callout-no-overlap.webp')}
                   alt="Do place callout where it doesn't overlap other actions"
                   className={styles.dosDontImg}
                 />
@@ -253,7 +254,7 @@ export default function WCPHeartViewPage() {
             <div className={styles.dosDontCard}>
               <div className={styles.dosDontPreview}>
                 <img
-                  src="/assets/examples/heart-view/dont-3-callout-overlap.webp"
+                  src={withBase('/assets/examples/heart-view/dont-3-callout-overlap.webp')}
                   alt="Don't place callout where it overlaps other actions"
                   className={styles.dosDontImg}
                 />

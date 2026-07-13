@@ -4,6 +4,7 @@ import {
   ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, X, InfoCircle,
   Store, UserCircle, CreditCard, Receipt,
 } from '@/components/icons';
+import { withBase } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { ButtonGroup } from '@/components/ui/ButtonGroup';
 import { LinkButton } from '@/components/ui/LinkButton';
@@ -161,7 +162,7 @@ function CheckInModal({
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
                 <img
-                  src="/illustrations/spot-illustration/OilChange.svg"
+                  src={withBase('/illustrations/spot-illustration/OilChange.svg')}
                   alt=""
                   aria-hidden="true"
                   width={56}
@@ -317,7 +318,7 @@ function ViewDetailsModal({
           {/* Service row */}
           <div className={styles.apptServiceRow}>
             <img
-              src="/illustrations/spot-illustration/OilChange.svg"
+              src={withBase('/illustrations/spot-illustration/OilChange.svg')}
               alt=""
               aria-hidden="true"
               width={48}

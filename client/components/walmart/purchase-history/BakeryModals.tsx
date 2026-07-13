@@ -6,6 +6,7 @@ import { IconButton } from '@/components/ui/IconButton';
 import { Scrim } from '@/components/ui/Scrim';
 import { BakeryOrderDetailModal } from './BakeryOrderDetailModal';
 import styles from './AutoCareModals.module.css';
+import { withBase } from '@/lib/utils';
 
 export type BakeryModalType = 'pickup' | 'modify' | 'reorder' | 'viewDetails' | null;
 
@@ -66,7 +67,7 @@ function PickupModal({
             </div>
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
-                <img src="/illustrations/spot-illustration/CakesCustom.svg" alt="" aria-hidden="true" width={56} height={56} />
+                <img src={withBase('/illustrations/spot-illustration/CakesCustom.svg')} alt="" aria-hidden="true" width={56} height={56} />
                 <div className={styles.detailInfo}>
                   <p className={styles.detailHeading}>{cakeType || 'Custom Cake'}</p>
                   {orderRef && <p className={styles.detailSub}>{orderRef}</p>}
@@ -132,7 +133,7 @@ function ModifyOrderModal({
             </div>
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
-                <img src="/illustrations/spot-illustration/CakesCustom.svg" alt="" aria-hidden="true" width={56} height={56} />
+                <img src={withBase('/illustrations/spot-illustration/CakesCustom.svg')} alt="" aria-hidden="true" width={56} height={56} />
                 <div className={styles.detailInfo}>
                   <p className={styles.detailHeading}>{cakeType || 'Custom Cake'}</p>
                   {orderRef && <p className={styles.detailSub}>{orderRef}</p>}
@@ -204,7 +205,7 @@ function ReorderModal({
             </div>
             <div className={styles.checkInBody}>
               <div className={styles.detailCard}>
-                <img src="/illustrations/spot-illustration/CakesCustom.svg" alt="" aria-hidden="true" width={56} height={56} />
+                <img src={withBase('/illustrations/spot-illustration/CakesCustom.svg')} alt="" aria-hidden="true" width={56} height={56} />
                 <div className={styles.detailInfo}>
                   <p className={styles.detailHeading}>{cakeType || 'Custom Cake'}</p>
                   {orderRef && <p className={styles.detailSub}>Previous: {orderRef}</p>}
